@@ -18,11 +18,16 @@ function getCatData(event) {
       const temperament = data.breeds[0].temperament;
 
       const catInfoHTML = `
-        <img src="${img}" alt="${name}" />
-        <h2>${name}</h2>
-        <p><strong>Description:</strong> ${description}</p>
-        <p><strong>Temperament:</strong> ${temperament}</p>
+        <div class="cat-details">
+          <div class="cat-details-column">
+            <h2>${name}</h2>
+      <p><strong>Description:</strong> ${description}</p>
+      <p><strong>Temperament:</strong> ${temperament}</p>
+          </div>
+          <img src="${img}" alt="${name}" />
+        </div>
       `;
+
       catInfo.innerHTML = catInfoHTML;
     })
     .catch(() => {

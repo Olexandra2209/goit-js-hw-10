@@ -11,6 +11,8 @@
 
 .cat-info {
   position: relative;
+  display: flex;
+  align-items: flex-start;
 }
 
 .loader {
@@ -47,18 +49,23 @@
   width: 365px;
   margin-top: 20px;
   margin-bottom: 10px;
-  margin-left: 10px;
 }
 
-.cat-info h2 {
+.cat-details {
+  display: flex;
+  align-items: flex-start;
+}
+
+.cat-details-column {
+  flex: 1;
+}
+
+.cat-details h2 {
   margin-bottom: 5px;
-  margin-left: 10px;
   color: #3498db;
   font-size: 24px;
 }
 
-.cat-info p {
+.cat-details p {
   margin-bottom: 5px;
-  margin-left: 10px;
-  width: 365px;
 }
