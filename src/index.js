@@ -8,6 +8,7 @@ select.addEventListener('change', getCatData);
 
 function getCatData(event) {
   const catId = event.target.value;
+  catInfo.innerHTML = '';
   fetchCatByBreed(catId)
     .then(data => {
       error.style.display = 'none';
