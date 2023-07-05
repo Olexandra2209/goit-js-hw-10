@@ -5,9 +5,12 @@ axios.defaults.headers.common['x-api-key'] =
 
 const BASE_URL = 'https://api.thecatapi.com/v1/breeds';
 const CAT_DATA_URL = 'https://api.thecatapi.com/v1/images/search';
+const loader = document.querySelector('.loader');
 
 function fetchBreeds() {
+  loader.style.display = 'block';
   return axios(BASE_URL).then(response => {
+    loader.style.display = 'none';
     if (response.status !== 200) {
       throw new Error(response.status);
     }
@@ -16,7 +19,9 @@ function fetchBreeds() {
 }
 
 function fetchCatByBreed(breedId) {
+  loader.style.display = 'block';
   return axios(`${CAT_DATA_URL}?breed_ids=${breedId} `).then(response => {
+    loader.style.display = 'none';
     if (response.status !== 200) {
       throw new Error(response.status);
     }
